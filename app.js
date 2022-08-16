@@ -4,6 +4,7 @@ require('dotenv').config();
 
 // routers
 const userRoutes = require('./routes/user.routes');
+const postRoutes = require('./routes/post.routes');
 
 // data base
 mongoose
@@ -30,5 +31,6 @@ app.use(express.json());
    
 // root of routes 
 app.use('/api/auth', userRoutes);
+app.use('/api/post', postRoutes);
 
 module.exports = app;

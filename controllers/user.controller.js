@@ -1,6 +1,8 @@
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/user.model');
 
+// create a user account
 exports.signup = (req, res, next) => {
   bcrypt.hash(req.body.password, 10)
     .then(hash => {
@@ -16,6 +18,7 @@ exports.signup = (req, res, next) => {
     .catch(error => res.status(500).json({ error }));
 };
 
+// user sign in
 exports.login = (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then(user => {
@@ -29,10 +32,21 @@ exports.login = (req, res, next) => {
             }
             res.status(200).json({
                 userId: user._id,
-                token: 'TOKEN'
+                token: jwt.sign(
+                  { userId: user._id },
+                  `${process.env.TOKEN_SECRET}`,
+                  { expiresIn: '24h' }
+                )
             });
         })
         .catch(error => res.status(500).json({ error }));
     })
     .catch(error => res.status(500).json({ error }));
 };
+
+// user log out
+// module.exports.logout = (req, res) => {
+//   res.token('jwt', '', {expiresIn: 0.001});
+//   res.redirect('/');
+// };
+
