@@ -58,7 +58,20 @@ exports.updatePost = (req, res, next) => {
 
 // delete post
 exports.deletePost = (req, res, next) => {
-    Post.deleteOne({_id: req.params.id})
-        .then(() => {res.status(200).json({message: 'Deleted!'});})
-        .catch((error) => {res.status(400).json({error: error});});
+    Post.findOne({ _id: req.params.id})  
+        .then(post => {
+            if (post.userId != req.auth.userId) {
+               res.status(401).json({message: 'Not authorized'});
+           } else {
+                const filename = post.imageUrl.split('/images/')[1];
+                fs.unlink(`images/${filename}`, () => {
+                    Post.deleteOne({_id: req.params.id})
+                       .then(() => { res.status(200).json({message: 'Post supprimé !'})})
+                       .catch(error => res.status(401).json({ error }));
+                });
+            }
+        })
+        .catch( error => {
+            res.status(500).json({ error });
+        });
 };
