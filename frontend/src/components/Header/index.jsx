@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
-// // import Login from '../../pages/Login';
  
 function Header() {
     return (
         <nav>
+            <Link to="/log">S'identifier</Link>
             <Link to="/">Accueil</Link>
-            <Link to="/login">Connexion</Link>
         </nav>
     )
 }
