@@ -1,11 +1,29 @@
-import { Link } from 'react-router-dom'
- 
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Logo from '../../assets/icon-left-font.png';
+
+const HomeLogo = styled.img`
+    height: 200px;
+`
+
+const NavContainer = styled.nav`
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
 function Header() {
-    return (
-        <nav>
-            <Link to="/log">S'identifier</Link>
-            <Link to="/">Accueil</Link>
-        </nav>
+    return (    
+        <NavContainer>
+            <Link to="/">
+                <HomeLogo src={Logo} />
+            </Link>
+            <div>
+                <Link to="/">Accueil</Link>
+                <Link to="/profil">S'identifier</Link>
+            </div>
+        </NavContainer>
     )
 }
 
