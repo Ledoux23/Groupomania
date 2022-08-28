@@ -58,7 +58,7 @@ Card.propTypes = {
 
 Card.defaultProps = {
   message: '',
-  like: '',
+  like: 0,
   picture: DefaultPicture,
 }
 

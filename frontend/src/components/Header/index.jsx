@@ -19,10 +19,10 @@ function Header() {
             <Link to="/">
                 <HomeLogo src={Logo} />
             </Link>
-            <div>
+            {/* <div>
                 <Link to="/">Accueil</Link>
                 <Link to="/profil">S'identifier</Link>
-            </div>
+            </div> */}
         </NavContainer>
     )
 }

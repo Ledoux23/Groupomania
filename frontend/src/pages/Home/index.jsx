@@ -1,4 +1,5 @@
 // import { useState, useEffect } from "react";
+// import { useEffect } from 'react';
 import Card from '../../components/Card'
 
 // call API
@@ -17,6 +18,21 @@ function Home() {
   //       })
   //     )
   // }, [])
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/api/post`)
+  //   .then(function(res) {
+  //     if (res.ok) {
+  //       return res.json();
+  //     }
+  //   })
+  //   .then(function(value) {
+  //     console.log(value);
+  //   })
+  //   .catch(function(err) {
+  //     // Une erreur est survenue
+  //   });
+  // });
 
   return (
     <div>
