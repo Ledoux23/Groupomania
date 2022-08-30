@@ -1,6 +1,9 @@
 // import { useState, useEffect } from "react";
-// import { useEffect } from 'react';
-import Card from '../../components/Card'
+import { useEffect } from 'react';
+// import Card from '../../components/Card'
+
+// import styled from 'styled-components'
+// import colors from '../../utils/style/colors'
 
 // call API
 function Home() {
@@ -19,27 +22,35 @@ function Home() {
   //     )
   // }, [])
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/api/post`)
-  //   .then(function(res) {
-  //     if (res.ok) {
-  //       return res.json();
-  //     }
-  //   })
-  //   .then(function(value) {
-  //     console.log(value);
-  //   })
-  //   .catch(function(err) {
-  //     // Une erreur est survenue
-  //   });
-  // });
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/post`)
+    .then(function(res) {
+      if (res.ok) {
+        return res.json();
+      }
+    })
+    .then(function(value) {
+      console.log(value);
+    })
+    .catch(function(err) {
+      // Une erreur est survenue
+    });
+  });
 
   return (
     <div>
-      <h1>Voir tous les posts par ordre antéchronologique !</h1>
-      <Card />
       {/* {isDataLoading ? (console.log("Data ok !")) : (console.log("No data !"))}
       {postData ? (console.log("Test Ok !")) : (console.log("Echec test !"))} */}
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div className="jumbotron text-center">
+                <h1>Bienvenue sur Groupomania !</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      {/* <Card /> */}
     </div>
   )
 }

@@ -1,21 +1,18 @@
-import { useContext } from 'react'
+import colors from './colors'
 import { createGlobalStyle } from 'styled-components'
-import { ThemeContext } from '../context'
 
 const StyledGlobalStyle = createGlobalStyle`
     * {
       font-family: 'Trebuchet MS', Helvetica, sans-serif;
     }
     body {
-        background-color: ${({ isDarkMode }) =>
-            isDarkMode ? '#2F2E41' : 'white'};
+        background-color: ${colors.secondary} 
         margin: 0;
     }
 `
 
 function GlobalStyle() {
-    const { theme } = useContext(ThemeContext)
-    return <StyledGlobalStyle isDarkMode={theme === 'dark'} />
+    return <StyledGlobalStyle />
 }
 
 export default GlobalStyle

@@ -1,65 +1,91 @@
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import colors from '../../utils/style/colors'
-import DefaultPicture from '../../assets/profile.png'
+// import PropTypes from 'prop-types'
+// import styled from 'styled-components'
+// import colors from '../../utils/style/colors'
+// import DefaultPicture from '../../assets/profile.png'
 
-const CardMessage = styled.span`
-  color: #5843e4;
-  font-size: 22px;
-  font-weight: normal;
-  padding-left: 15px;
-`
+// const CardMessage = styled.span`
+//   color: #5843e4;
+//   font-size: 22px;
+//   font-weight: normal;
+//   padding-left: 15px;
+// `
 
-const CardLike = styled.span`
-  color: black;
-  font-size: 22px;
-  font-weight: normal;
-  align-self: center;
-`
+// const CardLike = styled.span`
+//   color: black;
+//   font-size: 22px;
+//   font-weight: normal;
+//   align-self: center;
+// `
 
-const CardImage = styled.img`
-  height: 150px;
-  width: 150px;
-  align-self: center;
-  border-radius: 50%;
-`
+// const CardImage = styled.img`
+//   height: 150px;
+//   width: 150px;
+//   align-self: center;
+//   border-radius: 50%;
+// `
 
-const CardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 15px;
-  background-color: ${colors.backgroundLight};
-  border-radius: 30px;
-  width: 300px;
-  height: 300px;
-  transition: 200ms;
-  &:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 10px #e2e3e9;
-  }
-`
+// const CardWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   padding: 15px;
+//   background-color: ${colors.backgroundLight};
+//   border-radius: 30px;
+//   width: 300px;
+//   height: 300px;
+//   transition: 200ms;
+//   &:hover {
+//     cursor: pointer;
+//     box-shadow: 2px 2px 10px #e2e3e9;
+//   }
+// `
 
-function Card({ message, picture, like }) {
-  return (
-    <CardWrapper>
-      <CardMessage>{message}</CardMessage>
-      <CardImage src={picture} alt="illustration" />
-      <CardLike>{like}</CardLike>
-    </CardWrapper>
-  )
+// function Card({ message, picture, like }) {
+//   return (
+//     <CardWrapper>
+//       <CardMessage>{message}</CardMessage>
+//       <CardImage src={picture} alt="illustration" />
+//       <CardLike>{like}</CardLike>
+//     </CardWrapper>
+//   )
+// }
+
+// Card.propTypes = {
+//   message: PropTypes.string.isRequired,
+//   like: PropTypes.number.isRequired,
+//   picture: PropTypes.string.isRequired,
+// }
+
+// Card.defaultProps = {
+//   message: '',
+//   like: 0,
+//   picture: DefaultPicture,
+// }
+
+// export default Card
+
+import image from '../../assets/icon-left-font.png';
+
+function Card() {
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    <div className="card">
+                        <div className="card-body">
+                            <p className="card-text">
+                                Bootstrap can be used directly on elements 
+                                and components in your React app by applying 
+                                the built-in classes as you would any other class.
+                            </p>
+                        </div>
+                        <img className="card-img-top" src={image} width="auto" height="auto" alt="Illustration" />
+                        <button type="button" className="btn btn-success col-12 col-md-3 col-lg-4">J'aime</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-Card.propTypes = {
-  message: PropTypes.string.isRequired,
-  like: PropTypes.number.isRequired,
-  picture: PropTypes.string.isRequired,
-}
-
-Card.defaultProps = {
-  message: '',
-  like: 0,
-  picture: DefaultPicture,
-}
-
-export default Card
+export default Card;

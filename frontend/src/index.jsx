@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import $ from 'jquery';
-// import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+// import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -9,22 +8,23 @@ import Home from './pages/Home';
 import Profil from './pages/Profil';
 import Header from './components/Header';
 import Error from './components/Error';
-import { ThemeProvider } from './utils/context';
-import Footer from './components/Footer'
-import GlobalStyle from './utils/style/GlobalStyle'
+import Footer from './components/Footer';
+import GlobalStyle from './utils/style/GlobalStyle';
+import SignInForm from './components/Log/SignInForm.jsx';
+import SignUpForm from './components/Log/SignUpForm.jsx';
 
 ReactDOM.render(
   <BrowserRouter> 
-    <ThemeProvider>
       <GlobalStyle />
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} /> 
         <Route path="/profil" element={<Profil />} />
+        <Route path="/login" element={<SignInForm />} />
+        <Route path="/signup" element={<SignUpForm />} />
         <Route path="*" element={<Error />} /> 
       </Routes>
       <Footer/>
-    </ThemeProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );

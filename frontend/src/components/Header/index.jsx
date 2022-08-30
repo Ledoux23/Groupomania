@@ -1,29 +1,43 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+// import { Link } from 'react-router-dom';
+// import styled from 'styled-components';
 import Logo from '../../assets/icon-left-font.png';
 
-const HomeLogo = styled.img`
-    height: 200px;
-`
-
-const NavContainer = styled.nav`
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`
+// const NavContainer = styled.nav`
+//     padding: 30px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// `
 
 function Header() {
     return (    
-        <NavContainer>
-            <Link to="/">
-                <HomeLogo src={Logo} />
-            </Link>
-            {/* <div>
-                <Link to="/">Accueil</Link>
-                <Link to="/profil">S'identifier</Link>
-            </div> */}
-        </NavContainer>
+        <div className="bg-light">
+            <div className="container">
+                <div className="row">
+                    <nav className="col navbar navbar-expand-lg navbar-dark bg-secondary">
+                        <a className="navbar-brand" href="/">
+                            <img src={Logo} width="100"  height="80" alt="Groupomania logo" />
+                        </a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li className="nav-item">
+                                    <a className="nav-link active" aria-current="page" href="/login">Se connecter</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/signup">S'inscrire</a>
+                                </li> 
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/">Se déconnecter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
     )
 }
 
