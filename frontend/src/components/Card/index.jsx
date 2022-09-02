@@ -63,24 +63,43 @@
 // }
 
 // export default Card
-
+import Logo from '../../assets/icon-left-font.png';
 import image from '../../assets/icon-left-font.png';
 
 function Card() {
     return (
         <div className="container">
             <div className="row">
-                <div className="col">
-                    <div className="card">
-                        <div className="card-body">
-                            <p className="card-text">
-                                Bootstrap can be used directly on elements 
-                                and components in your React app by applying 
-                                the built-in classes as you would any other class.
-                            </p>
+                <div className="container">
+                    <nav className="col navbar navbar-expand-lg navbar-dark bg-danger px-3">
+                        <a className="navbar-brand" href="/">
+                            <img src={Logo} width="100"  height="80" alt="Groupomania logo" />
+                        </a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">                          
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/">Se déconnecter</a>
+                                </li>
+                            </ul>
                         </div>
-                        <img className="card-img-top" src={image} width="auto" height="auto" alt="Illustration" />
-                        <button type="button" className="btn btn-success col-12 col-md-3 col-lg-4">J'aime</button>
+                    </nav>
+                </div>
+                <div className="container">
+                    <div className="col">
+                        <div className="card">
+                            <div className="card-body">
+                                <p className="card-text">
+                                    Bootstrap can be used directly on elements 
+                                    and components in your React app by applying 
+                                    the built-in classes as you would any other class.
+                                </p>
+                            </div>
+                            <img className="card-img-top" src={image} width="auto" height="auto" alt="Illustration" />
+                            <button type="button" className="btn btn-success col-12 col-md-3 col-lg-4">J'aime</button>
+                        </div>
                     </div>
                 </div>
             </div>

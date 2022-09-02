@@ -1,6 +1,7 @@
 // import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
 import Logo from '../../assets/icon-left-font.png';
+// import colors from '../../utils/style/colors';
 
 // const NavContainer = styled.nav`
 //     padding: 30px;
@@ -14,7 +15,7 @@ function Header() {
         <div className="bg-light">
             <div className="container">
                 <div className="row">
-                    <nav className="col navbar navbar-expand-lg navbar-dark bg-secondary">
+                    <nav className="col navbar navbar-expand-lg navbar-dark bg-danger px-3">
                         <a className="navbar-brand" href="/">
                             <img src={Logo} width="100"  height="80" alt="Groupomania logo" />
                         </a>
@@ -29,9 +30,6 @@ function Header() {
                                 <li className="nav-item">
                                     <a className="nav-link" href="/signup">S'inscrire</a>
                                 </li> 
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/">Se déconnecter</a>
-                                </li>
                             </ul>
                         </div>
                     </nav>

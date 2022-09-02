@@ -14,7 +14,7 @@ function Footer() {
         <div className="bg-light">
             <div className="container">
                 <div className="row">
-                    <div className="col">
+                    <div className="col py-4">
                         <ul className="list-inline text-center">
                             <li className="list-inline-item"><a href="/">À propos</a></li>
                             <li className="list-inline-item">&middot;</li>
